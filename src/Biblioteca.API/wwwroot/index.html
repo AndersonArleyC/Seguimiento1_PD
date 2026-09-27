@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Biblioteca · Catálogo</title><link rel="stylesheet" href="/styles.css"><script defer src="/app.js"></script></head>
+<body>
+<header><a class="brand" href="/">▤ <span>Biblioteca<span class="subbrand">CATÁLOGO DIGITAL</span></span></a><span class="badge">Solo consulta</span></header>
+<main>
+<section class="intro"><div><p class="eyebrow">EXPLORA · DESCUBRE · CONSULTA</p><h1>Tu próxima lectura<br>empieza aquí.</h1><p class="lead">Consulta libros, conoce a sus autores y explora el catálogo por categoría.</p></div><div class="illustration" aria-hidden="true"><span>LIBROS</span><span>IDEAS</span><span>HISTORIAS</span></div></section>
+<section class="catalogue" aria-labelledby="catalog-title">
+<div class="section-title"><div><p class="eyebrow">COLECCIÓN</p><h2 id="catalog-title">Explora el catálogo</h2></div><button id="reload" class="secondary">Actualizar catálogo</button></div>
+<form id="filters" class="filters">
+<div class="search"><label for="search">Buscar un libro</label><input id="search" type="search" placeholder="Título, ISBN o autor…" autocomplete="off"></div>
+<div><label for="category">Categoría</label><select id="category"><option value="">Todas las categorías</option></select></div>
+<div><label for="year">Año de publicación</label><select id="year"><option value="">Todos los años</option></select></div>
+<button type="reset" class="secondary reset">Limpiar filtros</button>
+</form>
+<div class="results-bar"><p id="status" role="status" aria-live="polite">Conectando con el catálogo…</p><span id="source">SQL Server · EF Core</span></div>
+<div id="error" class="error" role="alert" hidden></div>
+<div id="books" class="grid" aria-busy="true"></div>
+<div id="empty" class="empty" hidden><span aria-hidden="true">⌕</span><h3>No encontramos libros</h3><p>Prueba otro término o limpia los filtros.</p></div>
+</section>
+<section class="lookup"><div><p class="eyebrow">CONSULTA DIRECTA</p><h2>¿Tienes el identificador?</h2><p>Encuentra el detalle de un libro por su ID.</p></div><form id="lookup"><label for="book-id">Identificador del libro (GUID)</label><div class="input-row"><input id="book-id" placeholder="10000000-0000-0000-0000-000000000001" required><button>Consultar</button></div><p id="lookup-error" role="alert"></p></form></section>
+<footer>Biblioteca · Clean Architecture + DDD + CQRS<span>Catálogo de consulta · Sin operaciones de escritura</span></footer>
+</main>
+<dialog id="detail" aria-labelledby="detail-title"><button id="close-detail" class="close secondary" aria-label="Cerrar detalle">×</button><p class="eyebrow">FICHA DEL LIBRO</p><h2 id="detail-title">Consultando…</h2><div id="detail-body" aria-live="polite"></div></dialog>
+<template id="book-template"><article class="book"><div class="cover" aria-hidden="true"><span class="cover-category"></span><span class="cover-title"></span><span class="cover-author"></span></div><div class="book-body"><span class="tag"></span><h3></h3><p class="author"></p><p class="metadata"></p><button class="detail-button">Ver detalle <span aria-hidden="true">↗</span></button></div></article></template>
+</body></html>

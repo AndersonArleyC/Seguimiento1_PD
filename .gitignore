@@ -1,0 +1,9 @@
+**/bin/
+**/obj/
+.vs/
+*.user
+TestResults/
+.cli/
+.ui-check/
+appsettings.Development.json
+

@@ -1,0 +1,16 @@
+@baseUrl = http://localhost:5200
+
+### Query 1: todos los libros
+GET {{baseUrl}}/api/libros
+
+### Query 2: libro conocido
+GET {{baseUrl}}/api/libros/10000000-0000-0000-0000-000000000001
+
+### Libro inexistente: HTTP 404
+GET {{baseUrl}}/api/libros/99999999-9999-9999-9999-999999999999
+
+### Query 3: libros de Programación
+GET {{baseUrl}}/api/categorias/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/libros
+
+### Categoría inexistente: HTTP 200 y lista vacía
+GET {{baseUrl}}/api/categorias/99999999-9999-9999-9999-999999999999/libros
