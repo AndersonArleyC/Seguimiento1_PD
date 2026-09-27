@@ -1,3 +1,8 @@
+# Integrantes
+- Jose Ricardo Quiros Garcia
+- Juan Diego Patiño Osorio
+- Anderson Arley Cano Osorio
+
 # Biblioteca — catálogo de consulta
 
 Actividad académica en C#, .NET 10, ASP.NET Core y EF Core 10 con SQL Server.
